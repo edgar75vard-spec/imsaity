@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Логин / Регистрация</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Регистрация / Вход</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Кнопки -->
+<!-- Кнопки сверху -->
 <button id="loginBtn" class="top-left-btn">Войти</button>
 <button id="changeBgBtn" class="top-right-btn">Сменить фон</button>
 
 <div class="container">
-    <!-- Регистрация -->
-    <div id="registerSection" class="card active">
-        <h2>Регистрация</h2>
-        <form id="regForm" autocomplete="on">
-            <div class="field">
-                <input type="text" name="username" placeholder="Имя" autocomplete="name" required>
-                <span></span>
-            </div>
-            <div class="field">
-                <input type="email" name="email" placeholder="Email" autocomplete="email" required>
-                <span></span>
-            </div>
-            <div class="field">
-                <input type="password" name="password" placeholder="Пароль (латиница)" autocomplete="current-password" required>
-                <span></span>
-            </div>
-            <button type="submit">Зарегистрироваться</button>
-            <p id="regMessage"></p>
-        </form>
-    </div>
+  <!-- Регистрация -->
+  <div id="registerSection" class="card active">
+    <h2>Регистрация</h2>
+    <form id="regForm" autocomplete="on">
+      <input type="text" name="username" placeholder="Имя" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Пароль (латиница)" required>
+      <button type="submit">Зарегистрироваться</button>
+      <p id="regMessage"></p>
+    </form>
+  </div>
 
-    <!-- Логин -->
-    <div id="loginSection" class="card">
-        <h2>Вход</h2>
-        <form id="loginForm" autocomplete="on">
-            <div class="field">
-                <input type="email" name="loginEmail" placeholder="Email" autocomplete="email" required>
-                <span></span>
-            </div>
-            <div class="field">
-                <input type="password" name="loginPassword" placeholder="Пароль" autocomplete="current-password" required>
-                <span></span>
-            </div>
-            <button type="submit">Войти</button>
-            <p id="loginMessage"></p>
-        </form>
-        <button id="backBtn" class="back-btn">Назад</button>
-    </div>
+  <!-- Логин -->
+  <div id="loginSection" class="card">
+    <h2>Вход</h2>
+    <form id="loginForm" autocomplete="on">
+      <input type="email" name="loginEmail" placeholder="Email" required>
+      <input type="password" name="loginPassword" placeholder="Пароль" required>
+      <button type="submit">Войти</button>
+      <p id="loginMessage"></p>
+      <a href="#" id="forgotLink">Забыл пароль?</a>
+    </form>
+    <button id="backBtn" class="back-btn">Назад</button>
+  </div>
+</div>
+
+<!-- Модальное окно восстановления пароля -->
+<div id="forgotModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Восстановление пароля</h3>
+    <input type="email" id="forgotEmail" placeholder="Введите ваш email">
+    <button id="recoverBtn">Восстановить</button>
+    <p id="recoverMessage"></p>
+  </div>
 </div>
 
 <script src="script.js"></script>
